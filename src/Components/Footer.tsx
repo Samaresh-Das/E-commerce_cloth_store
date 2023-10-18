@@ -103,8 +103,7 @@ export const Footer = () => {
         </div>
         <div className="px-4 py-6  md:flex md:items-center md:justify-between">
           <span className="text-[20px] sm:text-center">
-            © 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights
-            Reserved.
+            © 2023 <a href="#">UrbanAura™</a>. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-5 sm:justify-center md:mt-0">
             <a

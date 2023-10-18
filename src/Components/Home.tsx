@@ -1,6 +1,8 @@
 import { GiHamburgerMenu } from "react-icons/gi";
-import Card from "./Card";
-import { productData } from "../data/product";
+import Journal from "./Journal";
+import { journalData } from "../data/journal";
+import Products from "./Products";
+import { Parallax } from "react-parallax";
 
 const Home = () => {
   return (
@@ -11,42 +13,54 @@ const Home = () => {
         <GiHamburgerMenu className="text-[30px]" />
       </div>
 
-      {/* Shop Banner */}
-      <div className="w-full h-[370px] bg-[#dbd2d7]">
-        <h1 className="flex justify-center items-center h-[370px] text-[30px]">
-          SHOP PAGE
+      {/* Desktop modern parallax scrolling */}
+      <Parallax
+        bgImage="src/assets/hero-image.jpg"
+        strength={500}
+        className="hidden md:block"
+      >
+        <div style={{ height: 370 }}>
+          <div>
+            <h1 className="flex justify-center items-center h-[370px] text-center text-[57px] inter font-extrabold ">
+              Shop <br className="md:hidden" /> Page
+            </h1>
+          </div>
+        </div>
+      </Parallax>
+
+      {/* Shop Banner Mobile */}
+      <div className="w-full md:hidden h-[370px] bg-[#dbd2d7] banner">
+        <h1 className="flex justify-center items-center h-[370px] text-center text-[57px] inter font-extrabold ">
+          Shop <br className="md:hidden" /> Page
         </h1>
       </div>
 
-      <div className="w-full  mt-[40px]">
-        <ul className="flex whitespace-nowrap  overflow-x-auto space-x-8 h-[50px] mx-[25px] category text-gray-500">
+      <div className="w-full  mt-[40px] mx-auto">
+        <ul className="flex flex-row overflow-x-auto justify-evenly space-x-8 h-[50px] category text-gray-500 mx-[25px]">
           <li>All</li>
           <li>Shoes</li>
           <li>Shirts</li>
-          <li>Pants</li>
           <li>Hoddies</li>
-          <li>Outer</li>
-          <li>Jackets</li>
-          <li>Accessories</li>
         </ul>
       </div>
+      <Products />
 
-      <div className="mt-[20px] mx-[30px]">
-        {productData.map((pData) => (
-          <section key={pData.id}>
-            <div className="mx-auto w-full max-w-7xl py-16 md:px-10 md:py-24 lg:py-32">
-              <div className="flex flex-col items-center">
-                <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  <Card
-                    title={pData.title}
-                    price={pData.price}
-                    imageUrl={pData.imageUrl}
-                  />
-                </div>
-              </div>
+      <div className="container md:w-full">
+        <h1 className="inter font-extrabold text-[35px] text-center mb-[20px] px-4">
+          Our Journal
+        </h1>
+
+        <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 md:justify-evenly px-5 md:w-full">
+          {journalData.map((jData) => (
+            <div key={jData.id}>
+              <Journal
+                title={jData.title}
+                category={jData.category}
+                imageUrl={jData.imageUrl}
+              />
             </div>
-          </section>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );

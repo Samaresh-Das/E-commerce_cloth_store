@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500&family=Inter:wght@800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,4 +11,16 @@
 .product_header,
 .category {
   font-family: "Poppins", sans-serif;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+@media (min-width: 768px) {
+  .banner {
+    background: url("./assets/hero-image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }

@@ -14,8 +14,8 @@ export const productData: Array<{
   },
   {
     id: "2",
-    title: "Stylish Grey T-Shirt",
-    category: "Shirt",
+    title: "Stylish Grey Pant",
+    category: "Pant",
     price: 29.99,
     imageUrl: "src/assets/Product/selling-products2.jpg",
   },
@@ -25,5 +25,26 @@ export const productData: Array<{
     category: "Shirt",
     price: 39.99,
     imageUrl: "src/assets/Product/selling-products3.jpg",
+  },
+  {
+    id: "4",
+    title: "Grunge Hoodie",
+    category: "Hoodie",
+    price: 49.99,
+    imageUrl: "src/assets/Product/selling-products4.jpg",
+  },
+  {
+    id: "5",
+    title: "Full Sleeve Jeans Jacket",
+    category: "Pant",
+    price: 59.99,
+    imageUrl: "src/assets/Product/selling-products5.jpg",
+  },
+  {
+    id: "6",
+    title: "Orange White Nike",
+    category: "Shoes",
+    price: 59.99,
+    imageUrl: "src/assets/Product/selling-products13.jpg",
   },
 ];
