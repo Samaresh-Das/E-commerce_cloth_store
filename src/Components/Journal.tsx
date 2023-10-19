@@ -4,13 +4,30 @@ interface journalParams {
   title: string;
   category: string;
   imageUrl: string;
+  hoverProps: boolean;
+  onMouseEnter: () => void;
 }
 
-const Journal = ({ title, category, imageUrl }: journalParams) => {
+const Journal = ({
+  title,
+  category,
+  imageUrl,
+  hoverProps,
+  onMouseEnter,
+}: journalParams) => {
   return (
     <div className="max-w-sm  rounded-lg mx-auto">
       <a href="#">
-        <img className="rounded-t-lg" src={imageUrl} alt="" />
+        <img
+          className={`${
+            hoverProps
+              ? "transform transition-transform hover:scale-110 bg-black bg-opacity-75 hover:bg-opacity-100"
+              : ""
+          }  rounded-t-lg`}
+          src={imageUrl}
+          alt=""
+          onMouseEnter={onMouseEnter}
+        />
       </a>
       <div className="p-5">
         <a href="#">

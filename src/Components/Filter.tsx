@@ -1,6 +1,12 @@
-import React from "react";
+interface filterParams {
+  getPriceFilterData: (price: number) => void;
+}
 
-const Filter = () => {
+const Filter = ({ getPriceFilterData }: filterParams) => {
+  const changeHandler = (price: number) => {
+    getPriceFilterData(price);
+  };
+
   return (
     <details
       open
@@ -25,23 +31,24 @@ const Filter = () => {
         </svg>
       </summary>
 
-      <form action="" className="flex border-t border-gray-200 lg:border-t-0">
-        <fieldset className="w-full">
-          <legend className="block w-full bg-gray-50 px-5 py-3 text-xs font-medium">
+      <div className="flex border-t border-gray-200 lg:border-t-0">
+        <div className="w-full">
+          <h1 className="block w-full bg-gray-50 px-5 py-3 text-xs font-medium">
             Price
-          </legend>
+          </h1>
 
           <div className="space-y-2 px-5 py-6">
             <div className="flex items-center">
               <input
-                id="300+"
+                id="20+"
                 type="radio"
                 name="Price"
-                value="300+"
+                value="20+"
                 className="h-5 w-5 rounded border-gray-300"
+                onChange={() => changeHandler(20)}
               />
 
-              <label htmlFor="300+" className="ml-3 text-sm font-medium">
+              <label htmlFor="20+" className="ml-3 text-sm font-medium">
                 {" "}
                 $20+{" "}
               </label>
@@ -49,14 +56,15 @@ const Filter = () => {
 
             <div className="flex items-center">
               <input
-                id="600+"
+                id="30+"
                 type="radio"
                 name="Price"
-                value="600+"
+                value="30+"
                 className="h-5 w-5 rounded border-gray-300"
+                onChange={() => changeHandler(30)}
               />
 
-              <label htmlFor="600+" className="ml-3 text-sm font-medium">
+              <label htmlFor="30+" className="ml-3 text-sm font-medium">
                 {" "}
                 $30+{" "}
               </label>
@@ -64,28 +72,29 @@ const Filter = () => {
 
             <div className="flex items-center">
               <input
-                id="1500+"
+                id="40+"
                 type="radio"
                 name="Price"
-                value="1500+"
+                value="40+"
                 className="h-5 w-5 rounded border-gray-300"
-                checked
+                onChange={() => changeHandler(40)}
               />
 
-              <label htmlFor="1500+" className="ml-3 text-sm font-medium">
+              <label htmlFor="40+" className="ml-3 text-sm font-medium">
                 {" "}
                 $40+{" "}
               </label>
             </div>
           </div>
-        </fieldset>
-      </form>
+        </div>
+      </div>
       <div className="">
         <div className="flex justify-between border-t border-gray-200 px-5 py-3">
           <button
             name="reset"
             type="button"
             className="rounded text-xs font-medium text-gray-600 underline"
+            onClick={() => changeHandler(0)}
           >
             Reset All
           </button>
