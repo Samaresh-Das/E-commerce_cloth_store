@@ -7,9 +7,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./router/root.tsx";
 import { SignIn, SignUp } from "@clerk/clerk-react";
 import ErrorPage from "./error-page.tsx";
-
 import { ClerkProvider } from "@clerk/clerk-react";
-// import Cart from "./Components/Cart.tsx";
+import Cart from "./Components/Cart/Cart.tsx";
+
+import { Provider } from "react-redux";
+import { store } from "./Components/store/store.ts";
 
 if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -40,17 +42,19 @@ const router = createBrowserRouter([
     ),
     errorElement: <ErrorPage />,
   },
-  // {
-  //   path: "/cart",
-  //   element: <Cart />,
-  //   errorElement: <ErrorPage />,
-  // },
+  {
+    path: "/cart",
+    element: <Cart />,
+    errorElement: <ErrorPage />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ClerkProvider publishableKey={clerkPubKey}>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </ClerkProvider>
   </React.StrictMode>
 );
