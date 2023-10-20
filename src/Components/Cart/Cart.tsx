@@ -40,14 +40,8 @@ const Cart = () => {
     total += item.price * item.quantity;
   }
 
-  let subtotal = 0;
-  for (let item of cartItems) {
-    // Calculate the subtotal for each item (price * quantity) and add it to the total
-    subtotal = item.price * item.quantity;
-  }
-
   //Razorpay payment gateway
-  const loadScript = (src) => {
+  const loadScript = (src: any) => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
       script.src = src;

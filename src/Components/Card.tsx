@@ -11,7 +11,7 @@ interface productParams {
   imageUrl: string;
 }
 
-const Card = ({ id, name, price, imageUrl }: productParams, item: CartItem) => {
+const Card = ({ id, name, price, imageUrl }: productParams) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = (item: CartItem) => {
