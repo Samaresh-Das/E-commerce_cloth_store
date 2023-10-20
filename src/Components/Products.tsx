@@ -34,8 +34,9 @@ const Products = ({ selectedCategory }: ProductsProps) => {
               <div className="mx-auto w-full md:w-auto md:px-5 py-4 md:py-12 lg:py-12">
                 <div className="flex flex-col md:flex-row items-center w-full md:w-auto">
                   <Card
-                    title={pData.title}
+                    id={pData.id}
                     price={pData.price}
+                    name={pData.title}
                     imageUrl={pData.imageUrl}
                   />
                 </div>

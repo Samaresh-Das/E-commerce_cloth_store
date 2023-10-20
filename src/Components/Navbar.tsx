@@ -14,7 +14,9 @@ const Navbar = () => {
   };
   return (
     <div className="relative">
-      <h1 className="title text-center font-bold text-[34px]">UrbanAura</h1>
+      <Link to="/">
+        <h1 className="title text-center font-bold text-[34px]">UrbanAura</h1>
+      </Link>
       <div className=" text-[30px] md:text-[40px]">
         <div
           className="absolute right-3  md:right-12 top-2"
