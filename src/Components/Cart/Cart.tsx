@@ -150,7 +150,7 @@ const Cart = () => {
       <div className="flex flex-col md:flex-row mx-[50px] mt-[30px] mb-[60pxmd:] space-y-4 md:space-x-4 md:space-y-0 ">
         <Link
           to="/"
-          className="py-[19px] px-[54px]  bg-black text-white inter text-[18px]"
+          className="py-[19px] px-[54px]  md:text-left text-center bg-black text-white inter text-[18px]"
         >
           Continue Shopping
         </Link>

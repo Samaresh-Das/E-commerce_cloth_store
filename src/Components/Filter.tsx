@@ -10,7 +10,7 @@ const Filter = ({ getPriceFilterData }: filterParams) => {
   return (
     <details
       open
-      className="ml-8  rounded-lg border border-gray-200 open:shadow-lg text-gray-700 md:my-12 w-[250px]"
+      className="mx-auto md:ml-5  rounded-lg border border-gray-200 open:shadow-lg text-gray-700 md:my-12 w-[250px]"
     >
       <summary className="flex cursor-pointer select-none items-center justify-between bg-gray-100 px-5 py-3 lg:hidden">
         <span className="text-sm font-medium"> Toggle Filters </span>
@@ -40,49 +40,49 @@ const Filter = ({ getPriceFilterData }: filterParams) => {
           <div className="space-y-2 px-5 py-6">
             <div className="flex items-center">
               <input
-                id="20+"
+                id="2000+"
                 type="radio"
                 name="Price"
-                value="20+"
+                value="2000+"
                 className="h-5 w-5 rounded border-gray-300"
-                onChange={() => changeHandler(20)}
+                onChange={() => changeHandler(2000)}
               />
 
-              <label htmlFor="20+" className="ml-3 text-sm font-medium">
+              <label htmlFor="2000+" className="ml-3 text-sm font-medium">
                 {" "}
-                $20+{" "}
+                &#8377;2000{" "}
               </label>
             </div>
 
             <div className="flex items-center">
               <input
-                id="30+"
+                id="3000+"
                 type="radio"
                 name="Price"
-                value="30+"
-                className="h-5 w-5 rounded border-gray-300"
-                onChange={() => changeHandler(30)}
+                value="3000+"
+                className="h-5 w-5 rounded border-gray-30000"
+                onChange={() => changeHandler(3000)}
               />
 
-              <label htmlFor="30+" className="ml-3 text-sm font-medium">
+              <label htmlFor="3000+" className="ml-3 text-sm font-medium">
                 {" "}
-                $30+{" "}
+                &#8377;3000{" "}
               </label>
             </div>
 
             <div className="flex items-center">
               <input
-                id="40+"
+                id="4000+"
                 type="radio"
                 name="Price"
-                value="40+"
+                value="4000+"
                 className="h-5 w-5 rounded border-gray-300"
-                onChange={() => changeHandler(40)}
+                onChange={() => changeHandler(4000)}
               />
 
-              <label htmlFor="40+" className="ml-3 text-sm font-medium">
+              <label htmlFor="4000+" className="ml-3 text-sm font-medium">
                 {" "}
-                $40+{" "}
+                &#8377;4000{" "}
               </label>
             </div>
           </div>

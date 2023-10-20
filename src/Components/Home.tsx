@@ -1,4 +1,3 @@
-import { GiHamburgerMenu } from "react-icons/gi";
 import Journal from "./Journal";
 import { journalData } from "../data/journal";
 import Products from "./Products";
@@ -12,8 +11,6 @@ const Home = () => {
     <>
       <div className="flex flex-row justify-between my-[20px] mx-[20px]">
         <h1 className="product_header font-medium text-[25px]  ">Products</h1>
-
-        <GiHamburgerMenu className="text-[30px] md:hidden" />
       </div>
 
       {/* Desktop modern parallax scrolling */}
