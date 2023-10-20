@@ -18,7 +18,7 @@ const Home = () => {
 
       {/* Desktop modern parallax scrolling */}
       <Parallax
-        bgImage="src/assets/hero-image.jpg"
+        bgImage="assets/hero-image.jpg"
         strength={500}
         className="hidden md:block"
       >
