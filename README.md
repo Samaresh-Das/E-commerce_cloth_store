@@ -1,27 +1,38 @@
-# React + TypeScript + Vite
+# [UrbanAura Ecommerce](https://urbanaura.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An ecommerce site built under the given project by Totality Corp internship challenge. It is a frontend focused ecommerce site where users can authenticate, add items to cart and even buy products with payment gateway
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Thinking and approach
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+I used vite as it is much faster than CRA or old react. It is build on top of esbuild which is 90% faster than react. Avoided next js as it is simple app and doesn't need any server-side logic. For the authentication part, Clerk library handled it all, details about it are provided below. 
 
-- Configure the top-level `parserOptions` property like this:
+Used typescript as it gives me bonus points as well as it makes the application easier to maintain. I am not making this only as an assignment, but also for my personal project and growth. 
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Tech Stack
+ Vite React, Redux, React Router, TailwindCSS, Clerk, Typescript and Razorpay
+
+### [Clerk](https://clerk.com/)
+Clerk is a authentication easy to use library. It is simple to use and works much like redux. You provide the clerk provider around the main component and it will take care of application wide authentication. It also provides buil-in components like [Sign-in](https://clerk.com/docs/components/authentication/sign-in) and  [Sign-up](https://clerk.com/docs/components/authentication/sign-up) to easily implement those pages. No custom component creation is needed.
+
+Overall clerk makes authentication much easier.
+
+### [Razorpay](https://razorpay.com/docs/#home-payments)
+
+Razorpay is used for handling the payments gateway.
+
+The trasaction is in test mode so no worries. Users can test it.
+
+To test it use any phone number like - 7899633214
+
+And to test the debit cart use  - 4111 1111 1111 1111
+any random CVV 3 digit and any future date. On the OTP screen use any random 4 digit code and the payment will be a success
+
+## Features
+
+- Filter products
+- Live checkout(Test Mode)
+- Cart Facility
+
