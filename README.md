@@ -1,6 +1,6 @@
 # [UrbanAura Ecommerce](https://urbanaura.vercel.app/)
 
-An ecommerce site built under the given project by Totality Corp internship challenge. It is a frontend focused ecommerce site where users can authenticate, add items to cart and even buy products with payment gateway
+An ecommerce site built as a personal project. It is a frontend focused ecommerce site where users can authenticate, add items to cart and even buy products with payment gateway
 
 
 
