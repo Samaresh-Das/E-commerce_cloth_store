@@ -8,7 +8,7 @@ An ecommerce site built as a personal project. It is a frontend focused ecommerc
 
 I used vite as it is much faster than CRA or old react. It is build on top of esbuild which is 90% faster than react. Avoided next js as it is simple app and doesn't need any server-side logic. For the authentication part, Clerk library handled it all, details about it are provided below. 
 
-Used typescript as it gives me bonus points as well as it makes the application easier to maintain. I am not making this only as an assignment, but also for my personal project and growth. 
+Used typescript as it gives better flexibility.
 
 
 ## Tech Stack
