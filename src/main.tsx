@@ -9,6 +9,7 @@ import { SignIn, SignUp } from "@clerk/clerk-react";
 import ErrorPage from "./error-page.tsx";
 import { ClerkProvider } from "@clerk/clerk-react";
 import Cart from "./Components/Cart/Cart.tsx";
+import ProductDetails from "./Components/ProductDetails.tsx";
 
 import { Provider } from "react-redux";
 import { store } from "./Components/store/store.ts";
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/product/:id",
+    element: <ProductDetails />,
     errorElement: <ErrorPage />,
   },
 ]);
