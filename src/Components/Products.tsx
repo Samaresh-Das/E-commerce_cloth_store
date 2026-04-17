@@ -2,6 +2,7 @@ import { useState } from "react";
 import { productData } from "../data/product";
 import Card from "./Card";
 import Filter from "./Filter";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ProductsProps {
   selectedCategory: string;
@@ -23,27 +24,36 @@ const Products = ({ selectedCategory }: ProductsProps) => {
     return isCategoryMatch && isPriceMatch;
   });
   return (
-    <div className="block lg:grid lg:grid-cols-4">
-      <div>
+    <div className="flex flex-col lg:flex-row gap-8 px-4 mt-8">
+      <div className="w-full lg:w-1/4">
         <Filter getPriceFilterData={getPriceFilterData} />
       </div>
-      <div className="lg:col-span-3">
-        <div className="mt-[20px] mx-[30px] md:flex md:flex-row md:flex-wrap">
-          {filteredProducts.map((pData) => (
-            <section key={pData.id}>
-              <div className="mx-auto w-full md:w-auto md:px-5 py-4 md:py-12 lg:py-12">
-                <div className="flex flex-col md:flex-row items-center w-full md:w-auto">
-                  <Card
-                    id={pData.id}
-                    price={pData.price}
-                    name={pData.title}
-                    imageUrl={pData.imageUrl}
-                  />
-                </div>
-              </div>
-            </section>
-          ))}
-        </div>
+      <div className="w-full lg:w-3/4">
+        <motion.div 
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <AnimatePresence>
+            {filteredProducts.map((pData) => (
+              <motion.section 
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                key={pData.id}
+                className="w-full flex"
+              >
+                <Card
+                  id={pData.id}
+                  price={pData.price}
+                  name={pData.title}
+                  imageUrl={pData.imageUrl}
+                />
+              </motion.section>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface journalParams {
   title: string;
   category: string;
@@ -14,28 +16,32 @@ const Journal = ({
   onMouseEnter,
 }: journalParams) => {
   return (
-    <div className="max-w-sm  rounded-lg mx-auto">
-      <a href="#">
-        <img
-          className={`${
-            hoverProps
-              ? "transform transition-transform hover:scale-110 bg-black bg-opacity-75 hover:bg-opacity-100"
-              : ""
-          }  rounded-t-lg`}
+    <motion.div 
+      whileHover={{ y: -10 }}
+      transition={{ duration: 0.3 }}
+      className="neu-card overflow-hidden w-full h-full flex flex-col cursor-pointer"
+      onMouseEnter={onMouseEnter}
+    >
+      <div className="h-48 overflow-hidden rounded-t-3xl border-b-4 border-[#E76F51]">
+        <motion.img
+          animate={{ scale: hoverProps ? 1.05 : 1 }}
+          transition={{ duration: 0.4 }}
           src={imageUrl}
-          alt=""
-          onMouseEnter={onMouseEnter}
+          alt={title}
+          className="w-full h-full object-cover"
         />
-      </a>
-      <div className="p-5">
+      </div>
+      <div className="p-6 flex-grow flex flex-col justify-between">
         <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight ">{title}</h5>
+          <h5 className="mb-2 text-xl md:text-2xl font-bold tracking-tight text-slate-800 hover:text-[#E76F51] transition-colors duration-300">
+            {title}
+          </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mt-4 font-semibold text-sm uppercase tracking-widest text-[#E76F51]">
           {category}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

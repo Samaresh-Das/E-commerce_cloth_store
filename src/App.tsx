@@ -12,12 +12,13 @@ function App() {
         <meta charSet="utf-8" />
         <title>UrbanAura</title>
       </Helmet>
-      <div>
+      <div className="bg-[#F2EFE9] min-h-screen font-sans text-slate-700">
         <Navbar />
-        <hr />
-        <Home />
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Home />
+        </main>
+        <Footer />
       </div>
-      <Footer />
       <Toaster position="bottom-center" />
     </>
   );

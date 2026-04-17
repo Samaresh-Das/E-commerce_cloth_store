@@ -2,11 +2,12 @@ import toast from "react-hot-toast";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CartItem, addToCart } from "./store/cartSlice";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface productParams {
   id: number;
   name: string;
-  //   category: string;
   price: number;
   imageUrl: string;
 }
@@ -20,29 +21,45 @@ const Card = ({ id, name, price, imageUrl }: productParams) => {
   };
 
   return (
-    <div className="flex max-w-full flex-col gap-1 rounded-md">
-      <img alt={name} src={imageUrl} className="h-96 w-full object-contain" />
+    <motion.div 
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2 }}
+      className="neu-card flex flex-col justify-between w-full h-full p-4 relative"
+    >
+      <Link to={`/product/${id}`} className="flex-grow flex flex-col">
+        <div className="neu-inset rounded-2xl p-4 flex justify-center items-center mb-6 h-64 overflow-hidden mb-4 cursor-pointer">
+          <motion.img 
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            alt={name} 
+            src={imageUrl} 
+            className="h-full object-contain drop-shadow-md mix-blend-multiply" 
+          />
+        </div>
 
-      <div className="flex h-full w-full flex-col items-start justify-around px-0 py-4">
         <div className="mb-4">
-          <p className="text-[25px] font-bold md:text-2xl">{name}</p>
+          <p className="text-xl lg:text-2xl font-bold text-slate-700 leading-tight hover:text-[#E76F51] transition-colors cursor-pointer">{name}</p>
         </div>
-        <div className="flex flex-row items-center justify-between w-full">
-          <div className="flex items-start max-[991px]:flex-col lg:items-center">
-            <p className="text-[32px] text-[#6995B1] ">&#8377; {price}</p>
-          </div>
-          <div className="items-end">
-            <button
-              onClick={() =>
-                addToCartHandler({ id: id, name, price, imageUrl, quantity: 1 })
-              }
-            >
-              <AiOutlineShoppingCart className="text-[35px]" />
-            </button>
-          </div>
-        </div>
+      </Link>
+
+      <div className="flex flex-row items-center justify-between mt-auto">
+        <p className="text-2xl lg:text-3xl font-extrabold text-[#E76F51]">
+          &#8377;{price}
+        </p>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="neu-button bg-[#E76F51] p-3 rounded-full flex justify-center items-center text-white hover:bg-[#d46549] z-10"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            addToCartHandler({ id: id, name, price, imageUrl, quantity: 1 });
+          }}
+        >
+          <AiOutlineShoppingCart className="text-2xl" />
+        </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
