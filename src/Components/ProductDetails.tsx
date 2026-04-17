@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { AiOutlineShoppingCart, AiFillStar, AiOutlineArrowLeft } from "react-icons/ai";
 
 import Navbar from "./Navbar";
